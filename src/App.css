@@ -31,3 +31,11 @@
     transform: rotate(360deg);
   }
 }
+
+
+.nav-main .nav-item {margin-left: 10px;}
+.nav-main .nav-item:first-child {margin-left: 0;}
+.nav-main .nav-item a {padding: 10px;display: inline-block;}
+
+.ReactTable .rt-tbody .rt-tr-group {text-align: center;}
+.react-tagsinput-input {min-width: 130px;}

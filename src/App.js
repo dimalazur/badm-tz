@@ -1,28 +1,28 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React from 'react';
+import MessageListWrap from './containers/MessageListWrap';
+import CreateMessageWrapper from './containers/CreateMessageWrapper';
+import HeaderMenu from './components/HeaderMenu';
+import {
+  BrowserRouter,
+  Route,
+  Switch
+} from 'react-router-dom';
+import 'react-table/react-table.css';
+import 'react-tagsinput/react-tagsinput.css';
 import './App.css';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+const App = ()=> {
+  return (
+    <div>
+      <BrowserRouter>
+        <HeaderMenu />
+        <Switch>
+          <Route exact path="/" component={MessageListWrap} />
+          <Route exact path="/create-message" component={CreateMessageWrapper} />
+        </Switch>
+      </BrowserRouter>
+    </div>
+  );
 }
 
 export default App;
